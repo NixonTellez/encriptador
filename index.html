@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/8cd7497017.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="shortcut icon" href="img/icon/favicon.ico" type="image/x-icon">
+    <title>Encriptador</title>
+</head>
+<body>
+    <div class="container">
+        <header class="titulo">
+            <h1><img src="img/Logo.png" alt="Logo alura"></h1>
+        </header>
+        <section class="input">
+            <textarea name="text-in" id="text-in" placeholder="Ingrese el texto aquí."></textarea>
+            <label for="text-in" class="text-info"><img src="img/bi_exclamation-circle-fill.png" alt="información importante">  Solo letras minusculas y sin acento.</label>
+            <div class="button-container">
+                <button class="button" id="encriptar-button">Encriptar</button>
+                <button class="button" id="desencriptar-button">Desencriptar</button>
+            </div>
+        </section>
+        <section class="output">
+            <div class="text-out" id="text-out">
+                <textarea name="out-cod" id="out-cod" readonly></textarea>
+                <button class="button" id="copy-button">Copiar</button>
+            </div>
+            <div class="text-out-placeholder" id="text-out-placeholder">
+                <img src="img/Muñeco.png" alt="">
+                <h2>Ningún Mensaje fue encontrado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+        </section>
+        <script src="js/encriptador.js"></script>
+    </div>
+    <footer class="footer">
+        <p>Desarrollado por <a class="github" href="https://github.com/NixonTellez/" target="_blank">Nixon Giovanny Pardo Tellez <i class="fa-brands fa-github" style="color: #0a3871;"></i></a></p>
+    </footer>
+</body>
+</html>
