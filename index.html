@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/8cd7497017.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/dark-theme.css">
 
     <link rel="shortcut icon" href="img/icon/favicon.ico" type="image/x-icon">
     <title>Encriptador</title>
@@ -13,7 +14,17 @@
 <body>
     <div class="container">
         <header class="titulo">
-            <h1><img src="img/Logo.png" alt="Logo alura"></h1>
+            <h1>
+                <img id="logo" src="img/Logo.png" alt="Logo alura">
+                <img id="logo-dark" src="img/logo-blanco.png" alt="Logo alura">
+            </h1>
+            <div class = 'toggle-switch'>
+                    <label class="switch">
+                        <input id="check_theme" type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                <i class="fa-solid fa-moon fa-lg"></i>
+            </div>
         </header>
         <section class="input">
             <textarea name="text-in" id="text-in" placeholder="Ingrese el texto aquí."></textarea>
@@ -29,15 +40,28 @@
                 <button class="button" id="copy-button">Copiar</button>
             </div>
             <div class="text-out-placeholder" id="text-out-placeholder">
-                <img src="img/Muñeco.png" alt="">
+                <img id="dibujo" src="img/Muñeco.png" alt="">
+                <img id="dibujo-dark" src="img/Muñeco-Dark.png" alt="">
                 <h2>Ningún Mensaje fue encontrado</h2>
                 <p>Ingresa el texto que desees encriptar o desencriptar.</p>
             </div>
         </section>
+        <div class="modal-container" id="modal-error">
+            <div class="modal-box">
+                <i class="fa-solid fa-circle-xmark fa-3x" style="color: #dc3545;"></i>
+                <p>El texto no es valido o no existe</p>
+            </div>
+        </div>
+        <div class="modal-container" id="modal-copy">
+            <div class="modal-box">
+                <i class="fa-regular fa-clipboard fa-3x" style="color: #198754;"></i>
+                <p>Mensaje copiado</p>
+            </div>
+        </div>
         <script src="js/encriptador.js"></script>
     </div>
     <footer class="footer">
-        <p>Desarrollado por <a class="github" href="https://github.com/NixonTellez/" target="_blank">Nixon Giovanny Pardo Tellez <i class="fa-brands fa-github" style="color: #0a3871;"></i></a></p>
+        <p>Desarrollado por <a class="github" href="https://github.com/NixonTellez/" target="_blank">Nixon Giovanny Pardo Tellez <i class="fa-brands fa-github"></i></a></p>
     </footer>
 </body>
 </html>

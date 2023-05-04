@@ -1,0 +1,89 @@
+
+body.dark{
+    background-color: #222;
+    transition: all 0.7s;
+}
+
+body.dark .toggle-switch, body.dark #text-in::placeholder,
+body.dark #text-in, body.dark .footer
+{
+    color: #C7C0B5;
+}
+
+body.dark .titulo #logo{ display: none; }
+body.dark .titulo #logo-dark{ display: initial; }
+
+body.dark .button{
+    color: #C7C0B5;
+    border: solid 1px #C7C0B5;
+    transition: all 0.5s;
+}
+
+body.dark .button:first-child{
+    color: #222;
+    background-color: #C7C0B5;
+}
+
+body.dark .button:hover{
+    background-color: #333;
+    color: #FAF3E8;
+    border-color: #FAF3E8;
+}
+
+body.dark .button:first-child:hover{
+    color: #333;
+    background-color: #FAF3E8;
+    border-color: #FAF3E8;
+}
+
+body.dark .button:active{
+    color: #222;
+    background-color: #C7C0B5;
+}
+
+body.dark .button:first-child:active{
+    background-color: #222;
+    color: #C7C0B5;
+}
+
+body.dark .output{
+    background: none;
+    color: #C7C0B5;
+    border: #C7C0B5 3px solid;
+    box-shadow: 0px 24px 32px -8px rgba(230, 230, 230, 0.08);
+}
+
+body.dark .text-out textarea:read-only{
+    background: none;
+    color: #C7C0B5;
+}
+
+body.dark .text-out-placeholder #dibujo{ display: none; }
+body.dark .text-out-placeholder #dibujo-dark{ display: initial; }
+
+body.dark .modal-container{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+body.dark .modal-box{
+    background-color: #222;
+    border: 1.75px #C7C0B5  solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+body.dark .modal-box p{ color: #C7C0B5; opacity: 0.65; }
+
+body.dark .github{
+    color: #FAF3E8;
+}
+
+/*Tablets*/
+@media screen and (min-width: 768px) and  (max-width: 992px){
+    body.dark .text-out-placeholder #dibujo-dark{ display: none; }
+}
+
+
+/*Phones*/
+@media screen and (max-width: 767px){
+    body.dark .text-out-placeholder #dibujo-dark{ display: none; }
+}

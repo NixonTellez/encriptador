@@ -1,16 +1,25 @@
-
     function leerMensaje(){
         mensaje = document.querySelector('#text-in').value;
-        if(mensaje == null || mensaje == ''){
-            alert('No hay mensajes para codificar o decodificar!');
-            document.getElementById('text-out').style.display = "none";
-            document.getElementById('text-out-placeholder').style.display = "flex";
-        }else{
-            document.getElementById('text-out-placeholder').style.display = "none";
-            document.getElementById('text-out').style.display = "block";
-        }
     }
 
+    function eliminarAcentos(){
+        mensaje = mensaje.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function validarMensaje(){
+        if(mensaje == null || mensaje == ''){
+            document.getElementById('text-out').style.display = "none";
+            document.getElementById('text-out-placeholder').style.display = "flex";
+            return false;
+        }else{
+            mensaje = mensaje.toLowerCase();
+            eliminarAcentos();
+            document.getElementById('text-out-placeholder').style.display = "none";
+            document.getElementById('text-out').style.display = "block";
+            return true;
+        }
+    }
+    
     function encriptarMensaje(){
         for (let i = 0; i < codigo.length; i++) {
             mensaje = mensaje.replaceAll(idCodigo[i],codigo[i]);
@@ -29,26 +38,67 @@
 
     function iniciarCodificacion(){
         leerMensaje();
-        encriptarMensaje();
-        enviarMensaje();
+        if(validarMensaje()){
+            encriptarMensaje();
+            enviarMensaje();
+        }else{
+            showError();
+        }
     }
 
     function iniciarDecodificacion(){
         leerMensaje();
-        desencriptarMensaje();
-        enviarMensaje();
+        if(validarMensaje()){
+            desencriptarMensaje();
+            enviarMensaje();
+        }else{
+            showError();
+        }
     }
 
     function copiarMensaje(){
-        navigator.clipboard.writeText(mensaje);
-        alert("Mensaje copiado con exito");
+        try{
+            let text = document.querySelector("#out-cod");
+            text.select();
+            document.execCommand("copy");
+            showCopySuccess();
+            document.querySelector('#text-in').value = "";
+        }catch (error){
+            console.log(error);
+        }
     }
 
+    function showError(){
+        var box = document.querySelector('#modal-error');
+        box.classList.add('show')
+        setTimeout(() => {
+            box.classList.remove('show')
+        }, 1500);
+    }
+
+    function showCopySuccess() {
+        var box = document.querySelector('#modal-copy');
+        box.classList.add('show')
+        setTimeout(() => {
+            box.classList.remove('show')
+        }, 1500);
+    }
+
+
 var mensaje = '';
-var idCodigo = ['e','i','a','o','u'];
-var codigo = ['enter','imes','ai','ober','ufat'];
+const idCodigo = ['e','i','a','o','u'];
+const codigo = ['enter','imes','ai','ober','ufat'];
 document.getElementById('text-out').style.display = "none";
 
-document.querySelector('#encriptar-button').addEventListener('click', iniciarCodificacion);
-document.querySelector('#desencriptar-button').addEventListener('click', iniciarDecodificacion);
-document.querySelector('#copy-button').addEventListener('click', copiarMensaje);
+const encrypt = document.querySelector('#encriptar-button');
+const decrypt = document.querySelector('#desencriptar-button');
+const copy = document.querySelector('#copy-button');
+const theme = document.querySelector('#check_theme');
+
+encrypt.addEventListener('click', iniciarCodificacion);
+decrypt.addEventListener('click', iniciarDecodificacion);
+copy.addEventListener('click', copiarMensaje);
+
+theme.addEventListener('change', () => {
+    document.querySelector('body').classList.toggle('dark');
+});
