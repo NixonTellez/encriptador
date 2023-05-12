@@ -10,6 +10,11 @@ body.dark #text-in, body.dark .footer
     color: #C7C0B5;
 }
 
+body.dark .text-info{
+    opacity: 1;
+    color: #C7C0B5;
+}
+
 body.dark .titulo #logo{ display: none; }
 body.dark .titulo #logo-dark{ display: initial; }
 

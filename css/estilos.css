@@ -4,6 +4,7 @@
 
 body{background-color: #F3F5FC; font-family: 'Inter', sans-serif;}
 
+
 /*HEADER*/
 .container{
     display: grid;
@@ -46,6 +47,7 @@ body{background-color: #F3F5FC; font-family: 'Inter', sans-serif;}
     width: 3em;
     height: 1.7em;
     margin: 0.5em;
+    cursor: pointer;
 }
 
 .switch input { 
@@ -115,6 +117,7 @@ textarea{
     height: 60vh;
     color: #0A3871;
     font-size: 2.5em;
+    text-transform: lowercase;
 }
 
 .input #text-in::placeholder{
@@ -133,7 +136,7 @@ textarea{
     align-items: center;
 }
 
-.text-info img{
+.text-info i{
     margin-right: 0.5em;
 }
 
@@ -141,7 +144,7 @@ textarea{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
+    gap: 0.7em;
 }
 
 .button{
@@ -153,11 +156,20 @@ textarea{
     background: none;
     color: #0A3871;
     transition: all 0.5s;
+    cursor: pointer;
 }
 
 .button:first-child{
     color: #FFF;
     background-color: #0A3871;
+}
+
+.button#reset-button{
+    width: auto;
+}
+
+.button#reset-button span{
+    display: none;
 }
 
 .button:hover{
@@ -345,15 +357,34 @@ textarea{
 
     .input #text-in{ height: 55vh; line-height: 48px; }
 
+    .text-info{    
+        font-size: small;
+    }
+
     .button-container{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .button{
         width: 100%;
         margin: 0.5em 0;
         padding: 0.8em;
+    }
+
+    .button#reset-button{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .button#reset-button i{
+        display: none;
+    }
+
+    .button#reset-button span{
+        display: inline;
     }
 
     .output{

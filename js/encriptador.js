@@ -12,7 +12,6 @@
             document.getElementById('text-out-placeholder').style.display = "flex";
             return false;
         }else{
-            mensaje = mensaje.toLowerCase();
             eliminarAcentos();
             document.getElementById('text-out-placeholder').style.display = "none";
             document.getElementById('text-out').style.display = "block";
@@ -70,18 +69,24 @@
 
     function showError(){
         var box = document.querySelector('#modal-error');
-        box.classList.add('show')
+        box.classList.add('show');
         setTimeout(() => {
-            box.classList.remove('show')
+            box.classList.remove('show');
         }, 1500);
     }
 
     function showCopySuccess() {
         var box = document.querySelector('#modal-copy');
-        box.classList.add('show')
+        box.classList.add('show');
         setTimeout(() => {
-            box.classList.remove('show')
+            box.classList.remove('show');
         }, 1500);
+    }
+
+    function resetPage() {
+        document.querySelector('#text-in').value = "";
+        document.getElementById('text-out').style.display = "none";
+        document.getElementById('text-out-placeholder').style.display = "flex";
     }
 
 
@@ -92,11 +97,13 @@ document.getElementById('text-out').style.display = "none";
 
 const encrypt = document.querySelector('#encriptar-button');
 const decrypt = document.querySelector('#desencriptar-button');
+const reset = document.querySelector('#reset-button');
 const copy = document.querySelector('#copy-button');
 const theme = document.querySelector('#check_theme');
 
 encrypt.addEventListener('click', iniciarCodificacion);
 decrypt.addEventListener('click', iniciarDecodificacion);
+reset.addEventListener('click', resetPage);
 copy.addEventListener('click', copiarMensaje);
 
 theme.addEventListener('change', () => {
