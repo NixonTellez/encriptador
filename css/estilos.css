@@ -38,7 +38,6 @@ body{background-color: #F3F5FC; font-family: 'Inter', sans-serif;}
     float: right;
     justify-content: space-between;
     color: #0A3871;
-    
 }
 
 .switch {
@@ -118,6 +117,7 @@ textarea{
     color: #0A3871;
     font-size: 2.5em;
     text-transform: lowercase;
+    border-radius: 24px;
 }
 
 .input #text-in::placeholder{
@@ -176,6 +176,11 @@ textarea{
     background-color: #D8DFE8;
     color: #062142;
     border-color: #062142;
+    box-shadow: 0 0 10px rgba(10,56,113, 0.4);
+}
+
+.button#reset-button:hover{
+    border-radius: 50%;
 }
 
 .button:first-child:hover{
@@ -314,6 +319,10 @@ textarea{
 
     .input #text-in{ height: 70vh; line-height: 48px; }
 
+    .button#reset-button:hover{
+        border-radius: 24px;
+    }
+
     .output{
         margin-left: 2em;
         height: auto;
@@ -385,6 +394,11 @@ textarea{
 
     .button#reset-button span{
         display: inline;
+    }
+
+
+    .button#reset-button:hover{
+        border-radius: 24px;
     }
 
     .output{

@@ -33,6 +33,7 @@ body.dark .button:hover{
     background-color: #333;
     color: #FAF3E8;
     border-color: #FAF3E8;
+    box-shadow: 0 0 10px rgba(250,243,232, 0.3);
 }
 
 body.dark .button:first-child:hover{
