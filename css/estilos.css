@@ -121,7 +121,7 @@ textarea{
 }
 
 .input #text-in::placeholder{
-    color: #0A3871;
+    color: rgba(10,56,113, 0.7);
 }
 
 .text-info{    

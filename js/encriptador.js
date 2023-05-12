@@ -3,6 +3,7 @@
     }
 
     function eliminarAcentos(){
+        mensaje = mensaje.toLowerCase();
         mensaje = mensaje.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
@@ -83,7 +84,16 @@
         }, 1500);
     }
 
+    function showEraserSuccess() {
+        var box = document.querySelector('#modal-reset');
+        box.classList.add('show');
+        setTimeout(() => {
+            box.classList.remove('show');
+        }, 1500);
+    }
+
     function resetPage() {
+        showEraserSuccess();
         document.querySelector('#text-in').value = "";
         document.getElementById('text-out').style.display = "none";
         document.getElementById('text-out-placeholder').style.display = "flex";
